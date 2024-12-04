@@ -5,7 +5,8 @@ import time
 
 def client_program():
     print("trying to connect to server")
-    host = "10.34.10.44"
+   # host = "10.34.10.44"
+    host = "192.168.1.111"
     port = 5000  # socket server port number
 
     client_socket = socket.socket()  # instantiate
@@ -26,7 +27,9 @@ def client_program():
         if keyboard.is_pressed('w'):
             client_socket.send('w'.encode())  # send message
             time.sleep(0.1)
-
+        if keyboard.is_pressed('r'):
+            client_socket.send('r'.encode())  # send message
+            time.sleep(0.1)
     client_socket.close()  # close the connection
 
 
